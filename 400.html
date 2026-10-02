@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Rent Worx</title>
+    
+    <link rel="icon" href="media/common/favicon.ico" sizes="any">
+    <link rel="icon" href="media/common/favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="media/common/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/common/favicon-16x16.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Sticky Navigation (Matches main site) -->
+    <nav id="navbar">
+        <div class="container nav-inner">
+            <div class="logo-container" onclick="window.location.href='/'">
+                <img src="media/common/rentworx-logo-light.avif" alt="Rent Worx" class="logo-light" onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';">
+                <img src="media/common/rentworx-logo-dark.avif" alt="Rent Worx" class="logo-dark" onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';">
+                <span class="logo-tagline">Your Property. Our Priority.</span>
+                <span class="logo-text">RENT WORX</span>
+            </div>
+            <button class="mobile-menu-btn" onclick="document.getElementById('nav-links').classList.toggle('mobile-active')">☰</button>
+            <div class="nav-links" id="nav-links">
+                <a href="/">Home</a>
+                <a href="/landlords">Landlords</a>
+                <a href="/tenants">Tenants</a>
+                <a href="/rentals">Rent / Viewings</a>
+                <a href="/rent_appraisal" class="btn-nav">Rent Appraisal</a>
+                <a href="/services" class="btn-nav">Services</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact</a>
+                <button onclick="document.documentElement.setAttribute('data-theme', document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark')" style="font-size: 1.2rem; margin-left:10px;">🌓</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="app-root">
+        <!-- Error Content Banner -->
+        <section class="page-view active">
+            <div class="page-banner" style="background-color: var(--bg-primary); min-height: 75vh;">
+                <div class="glass-text-box" style="background: var(--bg-secondary) !important; border-color: var(--glass-border) !important;">
+                    <h1 style="color: var(--accent-gold) !important; font-size: 6rem; margin-bottom: 0; text-shadow: none;">400</h1>
+<h2 style="color: var(--text-primary) !important; text-shadow: none;">Bad Request</h2>
+<p style="color: var(--text-secondary) !important; text-shadow: none; margin-bottom: 2rem;">Your browser sent a request that this server could not understand.</p>
+<button class="btn-primary" onclick="window.location.href='/'">Return to Homepage</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

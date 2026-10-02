@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Disallow access to purely functional or internal directories if they exist in the future
+# Disallow: /api/
+
+Sitemap: https://www.rentworx.co.nz/sitemap.xml

@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent Worx | Property Management</title>
+    
+    <link rel="icon" href="media/common/favicon.ico" sizes="any">
+    <link rel="icon" href="media/common/favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="media/common/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/common/favicon-16x16.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Top Contact Banner -->
+    <div class="top-banner">
+        <div class="container">
+            <div class="contact-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                +64 21 712 912
+            </div>
+            <div class="emergency-text">In any emergency such as fire or theft, please call 111</div>
+            <div class="contact-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                rajiv@rentworx.co.nz
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation -->
+    <nav id="navbar">
+        <div class="container nav-inner">
+            <div class="logo-container" onclick="app.navigate('home')">
+                <img src="media/common/rentworx-logo-light.avif" alt="Rent Worx" class="logo-light" onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';">
+                <img src="media/common/rentworx-logo-dark.avif" alt="Rent Worx" class="logo-dark" onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';">
+                <span class="logo-tagline">Your Property. Our Priority.</span>
+                <span class="logo-text">RENT WORX</span>
+            </div>
+            <button class="mobile-menu-btn" onclick="app.toggleMobileNav()">☰</button>
+            <div class="nav-links" id="nav-links">
+                <a href="#home" onclick="app.navigate('home', event)" id="nav-home">Home</a>
+                <a href="#landlords" onclick="app.navigate('landlords', event)" id="nav-landlords">Landlords</a>
+                <a href="#tenants" onclick="app.navigate('tenants', event)" id="nav-tenants">Tenants</a>
+                <a href="#rentals" onclick="app.navigate('rentals', event)" id="nav-rentals">Rent / Viewings</a>
+                <a href="#appraisal" onclick="app.navigate('appraisal', event)" id="nav-appraisal" class="btn-nav">Rent Appraisal</a>
+                <a href="#services" onclick="app.navigate('services', event)" id="nav-services" class="btn-nav">Services</a>
+                <a href="#about" onclick="app.navigate('about', event)" id="nav-about">About Us</a>
+                <a href="#contact" onclick="app.navigate('contact', event)" id="nav-contact">Contact</a>
+                <button onclick="app.toggleTheme()" style="font-size: 1.2rem; margin-left:10px;">🌓</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- WhatsApp Floating Action Button -->
+    <a href="https://wa.me/6421712912" target="_blank" class="whatsapp-fab" aria-label="Chat with Rajiv on WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    </a>
+
+    <main id="app-root">
+
+        <!-- ================= VIEW: HOME ================= -->
+        <section id="view-home" class="page-view active">
+            <div class="hero">
+                <div class="hero-video-wrapper">
+                    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                        <source src="media/home/home-hero-clip.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="hero-content">
+                    <img src="media/common/rentworx-logo-light.avif" alt="Rent Worx" class="hero-dyn-logo" id="home-dyn-logo" onerror="this.style.display='none'">
+                    <h2 class="hero-dyn-tag" id="home-dyn-tag">
+                        YOUR PROPERTY<br>OUR PRIORITY
+                        <span class="hero-subtext">Boutique property management with a personal touch—keeping you connected and your investment effortless.</span>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="trust-banner">
+                <div class="container">
+                    <h2 class="text-center" style="font-size: 2.2rem; color: #fff; margin-bottom: 2.5rem;">Over 20 Years in Real Estate.</h2>
+                    <div class="trust-grid" style="grid-template-columns: repeat(3, 1fr);">
+                        <div class="trust-item"><h3><span class="counter" data-target="4">0</span>+</h3><p>Properties Managed</p></div>
+                        <div class="trust-item"><h3><span class="counter" data-target="8">0</span>+</h3><p>Happy Clients</p></div>
+                        <div class="trust-item"><h3><span class="counter" data-target="100">0</span>%</h3><p>Customer Satisfaction</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container section-pad">
+                <div class="split-row" style="margin-bottom: 4rem;">
+                    <div class="split-text">
+                        <h2 style="font-size: 2.6rem; margin-bottom: 1.5rem;">Property Management That Works For You</h2>
+                        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1rem;">At Rent Worx, we believe property management is about more than managing a rental — it’s about looking after your property as if it matters to us too.</p>
+                        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1rem;">We provide personal, reliable property management across Auckland, with a simple focus: good tenants, well-maintained properties and clear communication with owners.</p>
+                        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">We take the time to understand you, your property and what matters to you. We keep things straightforward, stay on top of the details and are always here when you need us. Our aim is simple — to make property ownership easier, with a property manager you can trust.</p>
+                    </div>
+                    <div class="fade-img-wrapper" style="align-self: stretch; flex: 1;">
+                        <img src="media/home/home-pm-auckland.avif" alt="Property Management That Works For You" style="height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+
+                <div class="text-center" style="margin-bottom: 3rem;">
+                    <h3 style="font-size: 2rem; color: var(--accent-gold);">Our Strategic Pillars</h3>
+                </div>
+                <div class="four-col-grid">
+                    <div class="tilt-card text-center">
+                        <svg width="40" height="40" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><polygon points="11 19 2 12 11 5 11 19"/><polygon points="22 19 13 12 22 5 22 19"/></svg>
+                        <h4>High-Impact Placement</h4>
+                        <p>Marketing campaigns engineered to attract verified tenants.</p>
+                    </div>
+                    <div class="tilt-card text-center">
+                        <svg width="40" height="40" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                        <h4>Comprehensive Vetting</h4>
+                        <p>Affordability, credit, tribunal, and reference checks.</p>
+                    </div>
+                    <div class="tilt-card text-center">
+                        <svg width="40" height="40" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        <h4>Healthy Homes Certified</h4>
+                        <p>Active oversight ensuring ongoing NZ legislative compliance.</p>
+                    </div>
+                    <div class="tilt-card text-center">
+                        <svg width="40" height="40" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        <h4>Accounting</h4>
+                        <p>Absolute transparency with 24/7 financial reporting access.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-banner" style="background-image: url('media/home/home-cta.avif');">
+                <div class="glass-text-box">
+                    <h2>The Rent Worx Difference</h2>
+                    <p>Personal care, proactive updates, and zero stress. We manage the hard work so you can enjoy the returns.</p>
+                    <button class="btn-primary" onclick="app.navigate('appraisal', event)">Request a Free Appraisal</button>
+                </div>
+            </div>
+
+            <div style="padding-top: 5rem; text-align: center;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Testimonials</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 3rem;">What Auckland owners say about partnering with Rent Worx.</p>
+            </div>
+            <div class="marquee-wrapper">
+                <div class="marquee-content" id="home-marquee"></div>
+            </div>
+        </section>
+
+        <!-- ================= VIEW: LANDLORDS ================= -->
+        <section id="view-landlords" class="page-view">
+            <div class="page-banner" style="background-image: url('media/landlord/llord-banner.avif');">
+                <div class="glass-text-box">
+                    <h1>Local Hands, Loyal Partners for Auckland Landlords</h1>
+                    <p>Sharp, proactive management boosting your financial returns</p>
+                </div>
+            </div>
+
+            <div class="container section-pad">
+                <div class="text-center" style="margin-bottom: 4rem;">
+                    <h2 style="font-size: 2.6rem;">Specialised Solutions</h2>
+                    <p style="color: var(--text-secondary);">Comprehensive management ensuring absolute peace of mind.</p>
+                </div>
+
+                <div class="four-col-grid" style="margin-bottom: 5rem;">
+                    <div class="anim-card text-center" style="border-top: 4px solid var(--accent-gold);">
+                        <svg width="40" height="40" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                        <h4>Proactive Updates</h4>
+                        <p>We keep you perfectly informed, managing flawless communication between you and your tenants.</p>
+                    </div>
+                    <div class="anim-card text-center" style="border-top: 4px solid var(--accent-gold);">
+                        <svg width="40" height="40" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        <h4>Rapid Response</h4>
+                        <p>Tenant requests or owner queries—we handle everything instantly with swift, decisive action.</p>
+                    </div>
+                    <div class="anim-card text-center" style="border-top: 4px solid var(--accent-gold);">
+                        <svg width="40" height="40" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <h4>Dedicated Bilingual Manager</h4>
+                        <p>You get a personal, dual-language property expert managing your daily operations.</p>
+                    </div>
+                    <div class="anim-card text-center" style="border-top: 4px solid var(--accent-gold);">
+                        <svg width="40" height="40" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                        <h4>Maximum Market Yield</h4>
+                        <p>We keep our finger on Auckland's pulse to secure top-tier rental returns and zero vacancies.</p>
+                    </div>
+                    <div class="anim-card text-center" style="border-top: 4px solid var(--accent-gold);">
+                        <svg width="40" height="40" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        <h4>Flawless Financial Management</h4>
+                        <p>Rent collections, invoices, and property expenses are sorted and paid right on time.</p>
+                    </div>
+                    <div class="anim-card text-center" style="border-top: 4px solid var(--accent-gold);">
+                        <svg width="40" height="40" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        <h4>24/7 Digital Portal</h4>
+                        <p>Track your investments instantly with easy online access to statements, ledgers, and documents.</p>
+                    </div>
+                    <div class="anim-card text-center" style="border-top: 4px solid var(--accent-gold);">
+                        <svg width="40" height="40" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+                        <h4>Premium Tenant Selection</h4>
+                        <p>We safeguard your property by placing premier tenants through rigorous background and credit vetting.</p>
+                    </div>
+                    <div class="anim-card text-center" style="border-top: 4px solid var(--accent-gold);">
+                        <svg width="40" height="40" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                        <h4>Total Maintenance Care</h4>
+                        <p>We coordinate all repairs seamlessly, keeping you informed and getting things done only with your approval.</p>
+                    </div>
+                    <div class="anim-card text-center" style="border-top: 4px solid var(--accent-gold);">
+                        <svg width="40" height="40" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                        <h4>Routine Photo Inspections</h4>
+                        <p>We conduct regular property reviews, providing you with detailed photo reports to protect your asset.</p>
+                    </div>
+                    <div class="anim-card text-center" style="border-top: 4px solid var(--accent-gold);">
+                        <svg width="40" height="40" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                        <h4>Zero-Headache Operations</h4>
+                        <p>We take the stress and guesswork out of land lording so you can simply enjoy your returns.</p>
+                    </div>
+                    <div class="anim-card text-center" style="border-top: 4px solid var(--accent-gold);">
+                        <svg width="40" height="40" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg>
+                        <h4>Healthy Homes Auditing</h4>
+                        <p>Continuous compliance oversight ensuring your property meets heating, insulation, ventilation, and moisture ingress laws.</p>
+                    </div>
+                    <div class="anim-card text-center" style="border-top: 4px solid var(--accent-gold);">
+                        <svg width="40" height="40" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+                        <h4>Vacancy & Tenant Retention</h4>
+                        <p>We work proactively to minimise vacancy periods and maintain good tenant relationships, helping keep your property occupied and your rental income consistent.</p>
+                    </div>
+                </div>
+
+                <div class="split-row reverse">
+                    <div class="split-text">
+                        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--text-primary);">Local Hands. Loyal Partners</h2>
+                        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1.5rem;">We protect your capital and eliminate landlord risk through systematic workflows. From detailed photographic property records and vetted trade maintenance to strict arrears management, we look after your asset like our own.</p>
+                    </div>
+                    <div class="fade-img-wrapper">
+                        <img src="media/landlord/llord-standard.avif" alt="Local Hands. Loyal Partners">
+                    </div>
+                </div>
+
+                <div style="background: var(--bg-secondary); padding: 4rem; border-radius: 8px; box-shadow: var(--card-shadow); text-align: center; margin-top: 4rem; border: 1px solid var(--glass-border);">
+                    <h2 style="font-size: 2.5rem; color: var(--accent-primary); margin-bottom: 1rem;">Upgrade to Rent Worx Experience</h2>
+                    <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin: 0 auto 3rem;">Ready to experience property management that actually works for you? Whether you're looking for an up-to-date market analysis or ready to make the switch, we make the transition effortless.</p>
+                    <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                        <button class="btn-primary" onclick="app.navigate('appraisal', event)" style="padding: 1rem 3rem; font-size: 1.1rem;">Book an Appraisal</button>
+                        <button class="btn-outline" onclick="app.navigate('switch', event)" style="width: auto; padding: 1rem 3rem; font-size: 1.1rem;">Switch to Us</button>
+                    </div>
+                </div>
+
+                <div style="max-width: 900px; margin: 0 auto; margin-top: 6rem;">
+                    <h2 style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem;">Managing & Protecting Your Investment</h2>
+                    <p class="text-center" style="color: var(--accent-gold); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3rem;">Landlord FAQs</p>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="app.toggleFaq(this)">What does professional management cost, and what do I get for it?<span class="faq-icon">▼</span></div>
+                        <div class="faq-answer">Our management fee is a percentage of the rent we collect, clearly stated upfront with no hidden extras. It covers tenant screening, rent collection, routine inspections, maintenance coordination, and full compliance oversight. Marketing costs, where applicable, are charged separately. You receive your rent and enjoy peace of mind, hassle-free.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="app.toggleFaq(this)">How much will your service cost me?<span class="faq-icon">▼</span></div>
+                        <div class="faq-answer"><strong>Management Fees From Just 5%</strong><br>Our property management packages range from 5% to 7% + GST, depending on the size of your portfolio and the level of support you want. We don't believe in one-size-fits-all fees. Call us today to find out which package fits your investment goals perfectly!</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="app.toggleFaq(this)">Do you collect a bond?<span class="faq-icon">▼</span></div>
+                        <div class="faq-answer">Yes. The Residential Tenancies Act requires that no more than four weeks' bond be collected. Unless otherwise agreed, Rent Worx considers three weeks to be the minimum that should be paid. The bond is paid before the tenant takes possession and is held by the Bond Centre until the tenant vacates.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="app.toggleFaq(this)">How often do you pay Landlord?<span class="faq-icon">▼</span></div>
+                        <div class="faq-answer">We credit your funds directly into your bank account twice a month. To keep your books simple, we email you a comprehensive monthly statement on the first working day of the month, completely detailing all income, expenses, and attached invoice copies.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="app.toggleFaq(this)">Will I be charged for a vacant property?<span class="faq-icon">▼</span></div>
+                        <div class="faq-answer">NO.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="app.toggleFaq(this)">Does Rent Worx guarantee me for any loss of rent?<span class="faq-icon">▼</span></div>
+                        <div class="faq-answer">NO.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="app.toggleFaq(this)">How often do you inspect my property?<span class="faq-icon">▼</span></div>
+                        <div class="faq-answer">We carry out regular property inspections, typically completing four per year unless agreed otherwise before management begins. Please check your insurance policy requirements, as most policies mandate a specific inspection frequency. Share this detail with your property manager, and we will align our schedule to keep you fully covered.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="app.toggleFaq(this)">How do you handle missed rent payments?<span class="faq-icon">▼</span></div>
+                        <div class="faq-answer">We monitor rent payments digitally so we can spot a missed payment instantly and start debt recovery immediately. While we do everything we can to resolve issues early, we will escalate the matter to formal mediation or the Tenancy Tribunal if necessary. We do not charge for our time during these processes. You will only need to cover the standard government application fee, which is currently $29.00 including GST.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="app.toggleFaq(this)">I will be moving overseas - can you handle all repairs?<span class="faq-icon">▼</span></div>
+                        <div class="faq-answer">Yes. We use a trusted team of skilled, competitively priced tradespeople who prioritize our calls for fast turnarounds. If you have a preferred contractor, we are happy to use them. Important Note: By law, if you are outside of New Zealand for more than 21 consecutive days, you must appoint a local agent to manage your property.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-banner" style="background-image: url('media/landlord/llord-cta.avif');">
+                <div class="glass-text-box">
+                    <h2>Ready to maximize your yield?</h2>
+                    <p>Secure a comprehensive, data-driven analysis of your rental investment today.</p>
+                    <button class="btn-primary" onclick="app.navigate('appraisal', event)">Request a Free Appraisal</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= VIEW: SWITCH TO US ================= -->
+        <section id="view-switch" class="page-view">
+            <div class="page-banner" style="background-image: url('media/switch/switch-banner.avif');">
+                <div class="glass-text-box">
+                    <h1>Switch to Rent Worx</h1>
+                    <p>Seamlessly transition your portfolio to Auckland's dedicated property management experts.</p>
+                </div>
+            </div>
+            <div class="container section-pad">
+                <div class="card-split-form">
+                    <div class="form-content">
+                        <h3 style="margin-bottom: 1.5rem; font-size: 1.8rem; color: var(--accent-gold);">Initiate Your Switch</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Fill out your details below. We handle the entire handover process with your existing agency and tenants.</p>
+                        <form action="https://formspree.io/f/mgavvlna" method="POST" onsubmit="app.handleFormspree(event, 'Request Received! Rajiv will contact you shortly to arrange the switch.')">
+                            <input type="hidden" name="subject" value="New Switch Agency Request">
+                            <div class="form-grid">
+                                <div class="form-group form-full">
+                                    <label>Your Full Name</label>
+                                    <input type="text" name="name" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email Address</label>
+                                    <input type="email" name="_replyto" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="tel" name="phone" class="form-control" required>
+                                </div>
+                                <div class="form-group form-full">
+                                    <label>Current Management Agency (Optional)</label>
+                                    <input type="text" name="current_agency" class="form-control">
+                                </div>
+                                <div class="form-group form-full">
+                                    <label>Property Address(es)</label>
+                                    <textarea name="properties" class="form-control" rows="3" required></textarea>
+                                </div>
+                                <div class="form-group form-full">
+                                    <button type="submit" class="btn-primary" style="width: 100%;">Authorize Switch</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="form-img-container">
+                        <img src="media/switch/switch-form.avif" alt="Switch to Rent Worx">
+                    </div>
+                </div>
+            </div>
+            <div class="cta-banner" style="background-image: url('media/switch/switch-cta.avif');">
+                <div class="glass-text-box">
+                    <h2>Expert Rental Appraisal</h2>
+                    <p>Ensure your investment is correctly aligned with the current market.</p>
+                    <button class="btn-primary" onclick="app.navigate('appraisal', event)">Request Rent Appraisal</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= VIEW: TENANTS ================= -->
+        <section id="view-tenants" class="page-view">
+            <div class="page-banner" style="background-image: url('media/tenant/tenant-banner.avif');">
+                <div class="glass-text-box">
+                    <h1>Tenant Services & Resources</h1>
+                    <p>Prompt support, transparent communication, and verified compliant rentals.</p>
+                </div>
+            </div>
+
+            <div class="container section-pad">
+                <div class="split-row" style="margin-bottom: 5rem;">
+                    <div class="split-text" style="flex: 1.3;">
+                        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Welcome to Your Next Home</h2>
+                        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1.5rem;">We connect quality residents with safe, compliant, and well-maintained properties built on mutual respect and open communication. With Rent Worx, you get a dedicated team that values your peace of mind.</p>
+                        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1.5rem;">Our processes are simple, stress-free, and we are always just a phone call away to ensure your renting experience is smooth from start to finish.</p>
+                    </div>
+                    <div class="fade-img-wrapper" style="flex: 1; align-self: stretch;">
+                        <img src="media/tenant/tenant-welcome.avif" alt="Welcome to Your Next Home" style="height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+
+                <div class="split-row reverse" style="margin-bottom: 5rem;">
+                    <div class="split-text" style="flex: 1.3;">
+                        <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--accent-gold);">Why Rent With Us:</h3>
+                        <div class="two-by-two-grid">
+                            <div class="tilt-card" style="padding: 1.5rem;">
+                                <svg width="30" height="30" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:0.5rem;" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                <h4 style="margin-bottom: 0.2rem;">Healthy Homes</h4>
+                                <p style="font-size: 0.85rem;">Every property is audited to ensure it is warm, dry, and fully compliant.</p>
+                            </div>
+                            <div class="tilt-card" style="padding: 1.5rem;">
+                                <svg width="30" height="30" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:0.5rem;" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                                <h4 style="margin-bottom: 0.2rem;">Rapid Response</h4>
+                                <p style="font-size: 0.85rem;">We resolve maintenance logs quickly so your home stays in top shape.</p>
+                            </div>
+                            <div class="tilt-card" style="padding: 1.5rem;">
+                                <svg width="30" height="30" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:0.5rem;" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                <h4>Support</h4>
+                                <p style="font-size: 0.85rem;">Residents benefit from an emergency dispatch line for urgent issues.</p>
+                            </div>
+                            <div class="tilt-card" style="padding: 1.5rem;">
+                                <svg width="30" height="30" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:0.5rem;" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                                <h4 style="margin-bottom: 0.2rem;">Simple Processes</h4>
+                                <p style="font-size: 0.85rem;">Manage your tenancy effortlessly via our transparent online portal.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fade-img-wrapper" style="flex: 1; align-self: stretch;">
+                        <img src="media/tenant/tenant-why.avif" alt="Why Rent With Us" style="height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem;">
+                    <h2 style="font-size: 2.5rem; text-align: center; margin-bottom: 3rem;">Essential Resident Resources</h2>
+                    <div class="five-col-grid">
+                        <div class="useful-link-category tilt-card" style="padding: 1.5rem;">
+                            <svg width="30" height="30" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                            <h4 style="margin-bottom: 1rem; color: var(--accent-gold);">Rights & Legal</h4>
+                            <a href="https://www.tenancy.govt.nz/" target="_blank" style="display: block; margin-bottom: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500;">Tenancy Services NZ ↗</a>
+                            <a href="https://communitylaw.org.nz/" target="_blank" style="display: block; margin-bottom: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500;">Community Law Centres ↗</a>
+                            <a href="https://www.cab.org.nz/" target="_blank" style="display: block; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500;">Citizens Advice Bureau ↗</a>
+                        </div>
+                        <div class="useful-link-category tilt-card" style="padding: 1.5rem;">
+                            <svg width="30" height="30" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <h4 style="margin-bottom: 1rem; color: var(--accent-gold);">Advocacy & Disputes</h4>
+                            <a href="https://www.tenancy.govt.nz/disputes/tribunal/" target="_blank" style="display: block; margin-bottom: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500;">Tenancy Tribunal ↗</a>
+                            <a href="https://rentersunited.org.nz/" target="_blank" style="display: block; margin-bottom: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500;">Renters United Advocacy ↗</a>
+                            <a href="https://www.cab.org.nz/" target="_blank" style="display: block; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500;">CAB Financial Advice ↗</a>
+                        </div>
+                        <div class="useful-link-category tilt-card" style="padding: 1.5rem;">
+                            <svg width="30" height="30" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 16 16 12 12 8"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                            <h4 style="margin-bottom: 1rem; color: var(--accent-gold);">Logistics</h4>
+                            <a href="https://www.nzta.govt.nz/" target="_blank" style="display: block; margin-bottom: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500;">NZTA – Vehicles ↗</a>
+                            <a href="https://www.nzpost.co.nz/" target="_blank" style="display: block; margin-bottom: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500;">NZ Post – Address Change ↗</a>
+                            <a href="https://www.salvationarmy.org.nz/" target="_blank" style="display: block; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500;">Salvation Army Support ↗</a>
+                        </div>
+                        <div class="useful-link-category tilt-card" style="padding: 1.5rem;">
+                            <svg width="30" height="30" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                            <h4 style="margin-bottom: 1rem; color: var(--accent-gold);">Search Portals</h4>
+                            <a href="https://www.trademe.co.nz/a/property/residential/rent" target="_blank" style="display: block; margin-bottom: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500;">Trade Me Rentals ↗</a>
+                            <a href="https://www.realestate.co.nz/residential/rental" target="_blank" style="display: block; margin-bottom: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500;">Real Estate NZ ↗</a>
+                            <a href="https://kaingaora.govt.nz/" target="_blank" style="display: block; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500;">Kāinga Ora ↗</a>
+                        </div>
+                        <div class="useful-link-category tilt-card" style="padding: 1.5rem;">
+                            <svg width="30" height="30" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            <h4 style="margin-bottom: 1rem; color: var(--accent-gold);">Community</h4>
+                            <a href="https://www.aucklandcouncil.govt.nz/en/rubbish-recycling/rubbish-recycling-collections/rubbish-recycling-collection-days.html" target="_blank" style="display: block; margin-bottom: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500;">Rubbish Collection Days ↗</a>
+                            <a href="https://www.fastconnect.co.nz/applications/apply_now" target="_blank" style="display: block; margin-bottom: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500;">Get Connected Easily ↗</a>
+                            <a href="https://www.aucklandcouncil.govt.nz" target="_blank" style="display: block; color: var(--text-secondary); font-size: 0.85rem; font-weight: 500;">Local Council Services ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="max-width: 900px; margin: 0 auto; margin-top: 6rem;">
+                    <h2 style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem;">Renting with Rent Worx</h2>
+                    <p class="text-center" style="color: var(--accent-gold); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3rem;">Tenant FAQ</p>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="app.toggleFaq(this)">HOW DO I APPLY?<span class="faq-icon">▼</span></div>
+                        <div class="faq-answer">An application form is available by clicking <a href="#rentals" onclick="app.navigate('rentals')" style="color:var(--accent-gold); text-decoration:underline;">here</a>. Note each applicant is subject to a background and credit check.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="app.toggleFaq(this)">WHAT ARE YOUR MOVE IN COST?<span class="faq-icon">▼</span></div>
+                        <div class="faq-answer">On approval, every tenant is required to pay a four week bond and two week's rent in advance, unless stated otherwise in advertising.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="app.toggleFaq(this)">HOW OFTEN DO YOU DO INSPECTION?<span class="faq-icon">▼</span></div>
+                        <div class="faq-answer">We will inspect your home each quarter, unless otherwise stated by the property owner. All inspections and property access is done in accordance with the Residential Tenancies Act.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="app.toggleFaq(this)">I WORK FULL TIME, HOW CAN I VIEW PROPERTY?<span class="faq-icon">▼</span></div>
+                        <div class="faq-answer">We are available for viewings by appointment to suit.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="app.toggleFaq(this)">WHAT NOTICE DO I HAVE TO GIVE TO LEAVE MY TENANCY?<span class="faq-icon">▼</span></div>
+                        <div class="faq-answer">If you are on a periodic tenancy, the required notice is 21 days and must be provided in writing. Please note that legal service times apply. A vacate notice template is available in our forms section OR Tenancy Services provides an official template for this exact scenario.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="app.toggleFaq(this)">I NEED SOMETHING FIXED<span class="faq-icon">▼</span></div>
+                        <div class="faq-answer">Please contact us via email for all non-urgent maintenance. For urgent maintenance, please call and text.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-banner" style="background-image: url('media/tenant/tenant-cta.avif');">
+                <div class="glass-text-box">
+                    <h2>Looking for a new home?</h2>
+                    <p>Browse our active Auckland listings.</p>
+                    <button class="btn-primary" onclick="app.navigate('rentals', event)">Browse Available Rentals</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= VIEW: RENTALS ================= -->
+        <section id="view-rentals" class="page-view">
+            <div class="page-banner" style="padding:0; overflow:hidden;">
+                <div id="rental-carousel-wrapper" style="position: absolute; inset:0; z-index: 1;"></div>
+                <div style="position: relative; z-index: 2;" class="glass-text-box">
+                    <h1>Available Rentals</h1>
+                    <p>Find your perfect home across Auckland.</p>
+                </div>
+            </div>
+
+            <div class="container section-pad">
+                <div class="filter-bar">
+                    <div style="margin-bottom: 1.2rem;">
+                        <label style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.6rem; display: block;">Select City</label>
+                        <div class="chip-group" id="location-chips">
+                            <button class="chip active" onclick="app.setCityFilter('All', this)">All Auckland</button>
+                        </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; align-items: end;">
+                        <div class="form-group" style="margin-bottom: 0;">
+                            <label>Bedrooms</label>
+                            <select id="filter-beds" class="form-control" onchange="app.renderProperties()">
+                                <option value="0">Any Bedrooms</option>
+                                <option value="1">1+ Bedrooms</option>
+                                <option value="2">2+ Bedrooms</option>
+                                <option value="3">3+ Bedrooms</option>
+                                <option value="4">4+ Bedrooms</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 0;">
+                            <label>Max Weekly Rent: $<span id="rent-val">1500</span>/wk</label>
+                            <input type="range" id="filter-rent" min="400" max="1500" step="50" value="1500" style="width: 100%; accent-color: var(--accent-gold); cursor: pointer;">
+                        </div>
+                        <div>
+                            <button class="btn-primary" onclick="app.clearFilters()" style="background: transparent; border: 1.5px solid var(--text-primary); color: var(--text-primary) !important; width: 100%;">Clear Filters</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="results-count" style="margin-bottom: 1.5rem; font-weight: 600; color: var(--text-secondary);">Loading properties...</div>
+                <div class="property-grid" id="property-grid"></div>
+            </div>
+
+            <div class="cta-banner" style="background-image: url('media/rentals/rental-cta.avif');">
+                <div class="glass-text-box">
+                    <h2>Can't find what you're looking for?</h2>
+                    <p>Contact our leasing agents for upcoming unlisted homes.</p>
+                    <button class="btn-primary" onclick="app.navigate('contact', event)">Contact Us</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= VIEW: RENTAL APPRAISAL ================= -->
+        <section id="view-appraisal" class="page-view">
+            <div class="page-banner" style="background-image: url('media/appraisal/rapp-banner.avif');">
+                <div class="glass-text-box">
+                    <h1>Rental Appraisal.</h1>
+                    <p>We Handle the Details. You Enjoy the Returns.</p>
+                </div>
+            </div>
+
+            <div class="container section-pad">
+                <div class="text-center" style="margin-bottom: 4rem;">
+                    <h2 style="font-size: 2.6rem; color: var(--accent-gold);">Appraisal Request</h2>
+                    <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 900px; margin: 0 auto;">Please contact our team today if you require an accurate, up-to-date rental assessment in the Auckland region. Ensuring your asset is correctly aligned with the current market is essential for maximizing your overall yields. Furthermore, an official appraisal serves as a vital document to help determine your borrowing capacity and secure investment finance with major banks.</p>
+                </div>
+
+                <div class="two-by-two-grid" style="margin-bottom: 5rem;">
+                    <div class="tilt-card">
+                        <svg width="36" height="36" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                        <h4 style="font-size: 1.2rem;">Targeted Weekly Returns</h4>
+                        <p>A realistic estimation of the peak weekly rent your property can realistically command.</p>
+                    </div>
+                    <div class="tilt-card">
+                        <svg width="36" height="36" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <h4 style="font-size: 1.2rem;">Localized Area Analysis</h4>
+                        <p>Concrete comparisons showing the performance of similar rental properties nearby.</p>
+                    </div>
+                    <div class="tilt-card">
+                        <svg width="36" height="36" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                        <h4 style="font-size: 1.2rem;">Official Baseline Data</h4>
+                        <p>Verified market statistics detailing lower, median, and upper-tier rents based on bedroom counts.</p>
+                    </div>
+                    <div class="tilt-card">
+                        <svg width="36" height="36" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:1rem;" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+                        <h4 style="font-size: 1.2rem;">Suburban Growth Indicators</h4>
+                        <p>Comprehensive data regarding your property's unique features, local infrastructure, and neighbourhood amenities.</p>
+                    </div>
+                </div>
+
+                <div class="card-split-form">
+                    <div class="form-img-container">
+                        <img src="media/appraisal/rapp-form.avif" alt="Appraisal Request">
+                    </div>
+                    <div class="form-content">
+                        <h3 style="margin-bottom: 1.5rem; font-size: 1.8rem; color: var(--accent-gold);">Please Complete the Rental Appraisal Form</h3>
+                        <form action="https://formspree.io/f/xoevvnkj" method="POST" onsubmit="app.handleFormspree(event, 'Appraisal Request Submitted! Rajiv will review and contact you shortly.')">
+                            <div class="form-grid">
+                                <div class="form-group form-full">
+                                    <label>Street Address</label>
+                                    <input type="text" name="address" class="form-control" required placeholder="123 Example Street">
+                                </div>
+                                <div class="form-group form-full">
+                                    <label>City / Suburb</label>
+                                    <input type="text" name="city_suburb" class="form-control" required placeholder="Auckland Suburb">
+                                </div>
+                                <div class="form-group">
+                                    <label>Property Type</label>
+                                    <select name="property_type" class="form-control" required>
+                                        <option>Standalone House</option>
+                                        <option>Townhouse</option>
+                                        <option>Apartment / Unit</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Bedrooms</label>
+                                    <input type="number" name="bedrooms" class="form-control" min="1" max="10" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Bathrooms</label>
+                                    <input type="number" name="bathrooms" class="form-control" min="1" max="6" step="0.5" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Garage (Cars)</label>
+                                    <select name="garage" class="form-control" required>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </div>
+                                <div class="form-group form-full">
+                                    <label>Available Timing</label>
+                                    <input type="datetime-local" name="available_timing" class="form-control" required>
+                                </div>
+                                <div class="form-group form-full">
+                                    <label>Management Intent</label>
+                                    <select name="intent" class="form-control" required>
+                                        <option>Switching management agencies</option>
+                                        <option>First-time investor seeking guidance</option>
+                                        <option>Casual placement / tenant search only</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Owner Name</label>
+                                    <input type="text" name="name" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone (+64)</label>
+                                    <input type="tel" name="phone" class="form-control" required>
+                                </div>
+                                <div class="form-group form-full">
+                                    <label>Email Address</label>
+                                    <input type="email" name="_replyto" class="form-control" required>
+                                </div>
+                                <div class="form-group form-full">
+                                    <button type="submit" class="btn-primary" style="width: 100%;">Submit for Appraisal</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-banner" style="background-image: url('media/appraisal/rapp-cta.avif');">
+                <div class="glass-text-box">
+                    <h2>Need immediate advice?</h2>
+                    <p>Call us directly for a confidential discussion about your portfolio.</p>
+                    <button class="btn-primary" onclick="app.navigate('contact', event)">Contact Us</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= VIEW: SERVICES ================= -->
+        <section id="view-services" class="page-view">
+            <div class="page-banner" style="background-image: url('media/services/services-banner.avif');">
+                <div class="glass-text-box">
+                    <h1>Our Property Management Services</h1>
+                    <p>Full-spectrum operational and compliance support.</p>
+                </div>
+            </div>
+
+            <div class="container section-pad">
+                <div class="split-row">
+                    <div class="split-text">
+                        <svg class="card-icon" style="width:50px; height:50px; stroke:var(--accent-gold); fill:none; margin-bottom:1rem;" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        <h3>Rent Collection</h3>
+                        <p>We manage rent collection and monitor payments closely, helping ensure rent is received on time and keeping you informed of any issues.</p>
+                    </div>
+                    <div class="fade-img-wrapper"><img src="media/services/service-rent.avif" alt="Rent Collection"></div>
+                </div>
+
+                <div class="split-row reverse">
+                    <div class="split-text">
+                        <svg class="card-icon" style="width:50px; height:50px; stroke:var(--accent-gold); fill:none; margin-bottom:1rem;" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <h3>Tenant Screening</h3>
+                        <p>Finding the right tenant matters. We carry out a thorough application and screening process, including appropriate reference and background checks, to help identify suitable tenants for your property.</p>
+                    </div>
+                    <div class="fade-img-wrapper"><img src="media/services/service-screening.avif" alt="Tenant Screening"></div>
+                </div>
+
+                <div class="split-row">
+                    <div class="split-text">
+                        <svg class="card-icon" style="width:50px; height:50px; stroke:var(--accent-gold); fill:none; margin-bottom:1rem;" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                        <h3>Property Inspections</h3>
+                        <p>Regular property inspections help us identify maintenance needs early, monitor the condition of your property and keep you informed with clear inspection reports.</p>
+                    </div>
+                    <div class="fade-img-wrapper"><img src="media/services/service-inspection.avif" alt="Property Inspections"></div>
+                </div>
+
+                <div class="split-row reverse">
+                    <div class="split-text">
+                        <svg class="card-icon" style="width:50px; height:50px; stroke:var(--accent-gold); fill:none; margin-bottom:1rem;" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                        <h3>Repairs & Maintenance</h3>
+                        <p>We work with a trusted network of qualified tradespeople to handle repairs and maintenance promptly and professionally, helping keep your property well maintained.</p>
+                    </div>
+                    <div class="fade-img-wrapper"><img src="media/services/services-maint.avif" alt="Repairs & Maintenance"></div>
+                </div>
+
+                <div class="split-row">
+                    <div class="split-text">
+                        <svg class="card-icon" style="width:50px; height:50px; stroke:var(--accent-gold); fill:none; margin-bottom:1rem;" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+                        <h3>Property Knowledge</h3>
+                        <p>With a strong understanding of the local property market and tenancy requirements, we help ensure your property is managed in line with current regulations and good industry practice.</p>
+                    </div>
+                    <div class="fade-img-wrapper"><img src="media/services/service-knowledge.avif" alt="Local Expertise"></div>
+                </div>
+
+                <div class="split-row reverse">
+                    <div class="split-text">
+                        <svg class="card-icon" style="width:50px; height:50px; stroke:var(--accent-gold); fill:none; margin-bottom:1rem;" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                        <h3>Property Marketing</h3>
+                        <p>We present your property professionally across relevant platforms, arrange viewings and work to attract suitable tenants for your rental.</p>
+                    </div>
+                    <div class="fade-img-wrapper"><img src="media/services/service-marketing.avif" alt="Property Marketing"></div>
+                </div>
+
+                <div class="split-row">
+                    <div class="split-text">
+                        <svg class="card-icon" style="width:50px; height:50px; stroke:var(--accent-gold); fill:none; margin-bottom:1rem;" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        <h3>Methamphetamine Testing</h3>
+                        <p>Where required, we can arrange methamphetamine testing to help identify potential contamination and provide greater peace of mind for property owners.</p>
+                    </div>
+                    <div class="fade-img-wrapper"><img src="media/services/service-testing.avif" alt="Methamphetamine Testing"></div>
+                </div>
+
+                <div class="split-row reverse">
+                    <div class="split-text">
+                        <svg class="card-icon" style="width:50px; height:50px; stroke:var(--accent-gold); fill:none; margin-bottom:1rem;" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        <h3>End-of-Year Financial Support</h3>
+                        <p>We keep your property management records organised throughout the year, making it easier to access the information you need for your end-of-year accounting and tax requirements.</p>
+                    </div>
+                    <div class="fade-img-wrapper"><img src="media/services/services-finance.avif" alt="End-of-Year Financial Support"></div>
+                </div>
+
+                <div class="split-row" style="margin-bottom:0;">
+                    <div class="split-text">
+                        <svg class="card-icon" style="width:50px; height:50px; stroke:var(--accent-gold); fill:none; margin-bottom:1rem;" viewBox="0 0 24 24"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg>
+                        <h3>Tenancy Tribunal Support</h3>
+                        <p>If a tenancy matter reaches the Tenancy Tribunal, we can assist with the process and represent you where appropriate, helping you understand the process and protect your interests.</p>
+                    </div>
+                    <div class="fade-img-wrapper"><img src="media/services/services-tribunal.avif" alt="Tenancy Tribunal Support"></div>
+                </div>
+            </div>
+
+            <div class="cta-banner" style="background-image: url('media/services/services-cta.avif');">
+                <div class="glass-text-box">
+                    <h2>Ready to delegate?</h2>
+                    <p>Discover how our services can streamline your investment.</p>
+                    <button class="btn-primary" onclick="app.navigate('contact', event)">Contact Our Team</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= VIEW: ABOUT US ================= -->
+        <section id="view-about" class="page-view">
+            <div class="page-banner" style="background-image: url('media/about/about-banner.avif');">
+                <div class="glass-text-box">
+                    <h1>The Rent Worx Story</h1>
+                    <p>Dedicated Operational Focus</p>
+                </div>
+            </div>
+
+            <div class="container section-pad">
+                <div class="split-row" style="margin-bottom: 3rem;">
+                    <div class="split-text" style="flex: 1.2;">
+                        <h2 style="font-size: 3rem; margin-bottom: 1.5rem;">About Rajiv & Rent Worx</h2>
+                        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1.5rem;">Led by Rajiv Kumar, Rent Worx was founded on a simple but powerful philosophy: residential property management demands absolute, dedicated operational focus.</p>
+                        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1.5rem;">A name synonymous with the Auckland real estate industry, Rajiv launched Rent Worx to elevate the standards of traditional property management. We believe that looking after an investment property shouldn't be a sideline service—it requires a boutique team that is entirely all-in.</p>
+                        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 0;"><strong>Language spoken by Rajiv: English, Hindi, Punjabi</strong></p>
+                    </div>
+                    
+                    <div style="flex: 1; display: flex; align-items: center; justify-content: center; align-self: stretch;">
+                        <div class="rajiv-hero-box float-anim">
+                            <img src="media/about/Rentworx_Rajiv.avif" alt="Rajiv Kumar - Rent Worx">
+                            <div class="floating-badge">
+                                <div class="badge-icon">✦</div>
+                                <div class="badge-text">
+                                    <strong>20+yrs</strong>
+                                    <span>in Real Estate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="two-col-grid" style="margin-bottom: 5rem;">
+                    <div class="tilt-card" style="border-top: 4px solid var(--accent-gold);">
+                        <svg width="30" height="30" stroke="var(--accent-gold)" fill="none" stroke-width="1.5" style="margin-bottom:0.5rem;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                        <h4 style="margin-bottom: 0.3rem;">Our Vision</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">We protect your portfolio by focusing fiercely on core pillars that ensure long-term stability and high yields.</p>
+                    </div>
+                    <div class="tilt-card" style="border-top: 4px solid var(--accent-primary);">
+                        <svg width="30" height="30" stroke="var(--accent-primary)" fill="none" stroke-width="1.5" style="margin-bottom:0.5rem;" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        <h4 style="margin-bottom: 0.3rem; color: var(--accent-primary);">Our Mission</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">At Rent Worx, we don't just oversee rentals—we partner with you to make sure your investments genuinely thrive.</p>
+                    </div>
+                </div>
+
+                <div class="section-pad" style="padding-top:0;">
+                    <div class="text-center" style="margin-bottom: 3.5rem;">
+                        <h2 style="font-size: 2.5rem; color: var(--accent-gold);">Reasons Landlords Choose Rent Worx</h2>
+                        <p style="color: var(--text-secondary); font-size: 1.1rem;">Six operational commitments that set our management apart.</p>
+                    </div>
+                    
+                    <div class="split-row" style="align-items: center; margin-bottom: 3rem;">
+                        <div class="reasons-list" style="flex: 2;">
+                            <div class="reason-long-card">
+                                <span class="faded-num">1</span>
+                                <p style="position:relative; z-index:2; margin:0; font-size:1.1rem; line-height: 1.6;"><strong>Focused Management:</strong> Our focus is entirely on managing rental properties and supporting landlords and tenants.</p>
+                            </div>
+                            <div class="reason-long-card">
+                                <span class="faded-num">2</span>
+                                <p style="position:relative; z-index:2; margin:0; font-size:1.1rem; line-height: 1.6;"><strong>Exhaustive Tenant Screening:</strong> Complete identity, credit, reference, affordability, and Tenancy Tribunal records checked for every adult applicant.</p>
+                            </div>
+                            <div class="reason-long-card">
+                                <span class="faded-num">3</span>
+                                <p style="position:relative; z-index:2; margin:0; font-size:1.1rem; line-height: 1.6;"><strong>Zero-Tolerance Arrears Policy:</strong> Automated tracking systems monitor rent payments daily, ensuring immediate intervention and rapid legal notices upon default.</p>
+                            </div>
+                        </div>
+                        <div class="fade-img-wrapper" style="flex: 1;">
+                            <img src="media/about/about-reason1.avif" alt="Property Management Focus">
+                        </div>
+                    </div>
+
+                    <div class="split-row reverse" style="align-items: center;">
+                        <div class="reasons-list" style="flex: 2;">
+                            <div class="reason-long-card">
+                                <span class="faded-num">4</span>
+                                <p style="position:relative; z-index:2; margin:0; font-size:1.1rem; line-height: 1.6;"><strong>Photographic Condition Audits:</strong> Comprehensive routine inspections delivered directly to your inbox with clear property recommendations.</p>
+                            </div>
+                            <div class="reason-long-card">
+                                <span class="faded-num">5</span>
+                                <p style="position:relative; z-index:2; margin:0; font-size:1.1rem; line-height: 1.6;"><strong>Statutory Compliance:</strong> Continuous Healthy Homes standards and Residential Tenancies Act tracking to protect owners from expensive tribunal liabilities.</p>
+                            </div>
+                            <div class="reason-long-card">
+                                <span class="faded-num">6</span>
+                                <p style="position:relative; z-index:2; margin:0; font-size:1.1rem; line-height: 1.6;"><strong>Localized Market Expertise:</strong> Specialized, on-the-ground property management across Auckland communities.</p>
+                            </div>
+                        </div>
+                        <div class="fade-img-wrapper" style="flex: 1;">
+                            <img src="media/about/about-reason2.avif" alt="Auckland Local Expertise">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-banner" style="background-image: url('media/about/about-cta.avif');">
+                <div class="glass-text-box">
+                    <h2>Our Absolute Commitment</h2>
+                    <p>We treat every managed residence as a cornerstone financial asset. Through transparent accounting and continuous compliance, we protect your peace of mind.</p>
+                    <button class="btn-primary" onclick="app.navigate('contact', event)">Get in touch</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= VIEW: CONTACT ================= -->
+        <section id="view-contact" class="page-view">
+            <div class="page-banner" style="background-image: url('media/contact/contact-banner.avif');">
+                <div class="glass-text-box">
+                    <h1>Get in Touch</h1>
+                    <p>Reach out to Rajiv and the Rent Worx team.</p>
+                </div>
+            </div>
+
+            <div class="container section-pad">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+                    <div class="deep-card" style="padding: 2rem; text-align: center;">
+                        <h4 style="margin-bottom: 0.5rem; color: var(--accent-gold);">Call or WhatsApp</h4>
+                        <p style="font-size: 1.3rem; font-weight: 700;">+64 21 712 912</p>
+                    </div>
+                    <div class="deep-card" style="padding: 2rem; text-align: center;">
+                        <h4 style="margin-bottom: 0.5rem; color: var(--accent-gold);">Email</h4>
+                        <p style="font-size: 1.15rem; font-weight: 600;">rajiv@rentworx.co.nz</p>
+                    </div>
+                    <div class="deep-card" style="padding: 2rem; border-bottom: 4px solid var(--danger); text-align: center;">
+                        <h4 style="color: var(--danger); margin-bottom: 0.5rem;">Emergency Situations</h4>
+                        <p>For urgent threats involving fire, theft, or physical injury, dial <strong>111</strong> immediately.</p>
+                    </div>
+                </div>
+
+                <div class="card-split-form">
+                    <div class="form-content">
+                        <h3 style="margin-bottom: 1.5rem; font-size: 1.8rem; color: var(--accent-gold);">Send a Direct Message</h3>
+                        <form action="https://formspree.io/f/mgavvlna" method="POST" onsubmit="app.handleFormspree(event, 'Message Sent! Rajiv will get back to you shortly.')">
+                            <div class="form-group">
+                                <label>Your Full Name</label>
+                                <input type="text" name="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" name="_replyto" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" name="phone" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Enquiry Details</label>
+                                <textarea name="message" class="form-control" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary" style="width: 100%; margin-top:0.5rem;">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="form-img-container">
+                        <img src="media/contact/contact-form.avif" alt="Contact Us">
+                    </div>
+                </div>
+
+                <div class="deep-card" style="height: 420px; padding: 0; margin-top: 2rem; position: relative; overflow: hidden; border-radius: 8px;">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 55px; background: rgba(34, 34, 34, 0.95); display: flex; align-items: center; padding: 0 20px; z-index: 10;">
+                        <span style="color: #fff; font-size: 1.1rem; font-weight: 600;">Rent Worx Locations</span>
+                    </div>
+                    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1sB65_sNSQlJwd0DxH71ipZbuediCHNQ&ehbc=2E312F" width="100%" style="border:0; height: 480px; position: absolute; top: -60px; left: 0;"></iframe>
+                </div>
+            </div>
+
+            <div class="cta-banner" style="background-image: url('media/contact/contact-cta.avif');">
+                <div class="glass-text-box">
+                    <h2>Let's Talk Property</h2>
+                    <p>Partner with the experts in Auckland real estate management.</p>
+                    <a href="https://wa.me/6421712912" target="_blank" class="btn-primary" style="margin-top:1rem;">Chat on WhatsApp</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Property Details Modal System -->
+    <div id="modal-property" class="modal-overlay" onclick="app.closeOnBackdrop(event, 'modal-property')">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3 id="modal-prop-title" style="font-size: 1.8rem; color: var(--accent-gold);">Property Details</h3>
+                <button onclick="app.closeModal('modal-property')" style="font-size:2rem; line-height: 1; color: var(--text-muted);">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-prop-body"></div>
+        </div>
+    </div>
+    
+    <!-- Lightbox for Enlarged View -->
+    <div id="lightbox" class="lightbox" onclick="this.classList.remove('active')">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Enlarged View">
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col" style="display: flex; flex-direction: column; align-items: flex-start;">
+                <!-- Logo & Tagline Wrapper (Centered internally, flush left with paragraph) -->
+                <div style="display: flex; flex-direction: column; align-items: center; align-self: flex-start;">
+                    <img src="media/common/rentworx-logo-light.avif" alt="Rent Worx" class="footer-logo-light" style="height: 100px; margin-bottom: 0;" onerror="this.style.display='none'; document.getElementById('footer-alt-text').style.display='block';">
+                    <img src="media/common/rentworx-logo-dark.avif" alt="Rent Worx" class="footer-logo-dark" style="height: 100px; margin-bottom: 0; display:none;" onerror="this.style.display='none'; document.getElementById('footer-alt-text').style.display='block';">
+                    <span style="font-size: 0.9rem; font-weight: 700; margin-bottom: 1rem; color: inherit; margin-top: -0.5rem;">Your Property. Our Priority.</span>
+                    <h4 id="footer-alt-text" style="font-family: 'Playfair Display'; font-size: 1.5rem; display:none; margin-bottom: 1rem;">RENT WORX</h4>
+                </div>
+                <!-- Left aligned paragraph -->
+                <p style="margin-top: 0.2rem; text-align: left;">Dedicated Property Management in Auckland.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#home" onclick="app.navigate('home', event)">Home</a></li>
+                    <li><a href="#landlords" onclick="app.navigate('landlords', event)">Landlords</a></li>
+                    <li><a href="#tenants" onclick="app.navigate('tenants', event)">Tenants</a></li>
+                    <li><a href="#rentals" onclick="app.navigate('rentals', event)">Available Rentals</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Discover</h4>
+                <ul>
+                    <li><a href="#services" onclick="app.navigate('services', event)">Services</a></li>
+                    <li><a href="#appraisal" onclick="app.navigate('appraisal', event)">Rental Appraisal</a></li>
+                    <li><a href="#about" onclick="app.navigate('about', event)">About Rajiv Kumar</a></li>
+                    <li><a href="#contact" onclick="app.navigate('contact', event)">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="mailto:rajiv@rentworx.co.nz" aria-label="Email Rent Worx">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="text-align: center; border-top: 1px solid var(--glass-border); padding-top: 2rem; color: var(--text-muted); font-size: 0.85rem;">
+            &copy; 2026 Rent Worx Property Management. All rights reserved.
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="js/main.js"></script>
+</body>
+</html>
