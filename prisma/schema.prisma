@@ -1,0 +1,42 @@
+// Rent Worx — Prisma schema
+// Phase 2: local PostgreSQL cache of ACTIVE rental listings synced from
+// MRI Palace (the single source of truth). The frontend queries THIS cache
+// for fast filtering (city / suburb / bedrooms / rent range); it never hits
+// MRI Palace directly on a page request.
+//
+// No tenant PII is ever stored here (NZ Privacy Act) — applications and
+// viewings are handed off to Tenancy.co.nz. See lib/tenancy.ts.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Property {
+  id         Int      @id @default(autoincrement())
+  // Stable id from MRI Palace so syncs upsert instead of duplicating.
+  externalId String   @unique
+  title      String
+  city       String   @default("All")
+  suburb     String
+  price      Int // weekly rent (NZD)
+  beds       Int
+  baths      Float
+  carparks   Int
+  status     String   @default("Available") // "Available" | "Rented"
+  // ISO date the property becomes available (when status = Available).
+  availableDate String?
+  // Image URLs (first entry is the primary card image).
+  images     String[]
+  active     Boolean  @default(true)
+  syncedAt   DateTime @default(now())
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([city, beds, price])
+  @@index([active])
+}

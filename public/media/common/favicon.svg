@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Rent Worx">
+  <rect width="256" height="256" rx="52" fill="#0F3156"/>
+  <path d="M128 56 L208 134 H48 Z" fill="#D18A1A"/>
+  <rect x="74" y="128" width="108" height="76" fill="#FFFFFF"/>
+  <rect x="112" y="152" width="32" height="52" fill="#0F3156"/>
+</svg>
